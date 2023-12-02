@@ -1,33 +1,9 @@
-function validateLogin() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const errorMessage = document.getElementById("error-message");
-
-  // Simple validation
-  if (username === "user" && password === "pass") {
-    errorMessage.style.color = "green";
-    errorMessage.textContent = "Login successful!";
-
-    // Redirect to the About Me page after a short delay (for demonstration purposes)
-    setTimeout(function () {
-      window.location.href = "/about-me.html";
-    }, 2000);
-  } else {
-    errorMessage.style.color = "red";
-    errorMessage.textContent =
-      "Invalid username or password. Please try again.";
-  }
-}
-
 function primaryLoad() {
   const navigation = document.querySelector(".header-nav-wrapper");
 
   const navigationHeight = navigation.offsetHeight;
 
-  document.documentElement.style.setProperty(
-    "--scroll-padding",
-    navigationHeight + "px"
-  );
+  document.documentElement.style.setProperty("--scroll-padding", navigationHeight + "px");
 
   // Update progress bar width based on scroll position
   document.addEventListener("scroll", function () {
@@ -59,8 +35,7 @@ function calculateAge() {
   // Adjust age if birthday hasn't occurred yet this year
   if (
     today.getMonth() < birthDate.getMonth() ||
-    (today.getMonth() === birthDate.getMonth() &&
-      today.getDate() < birthDate.getDate())
+    (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())
   ) {
     age--;
   }
@@ -71,5 +46,6 @@ function calculateAge() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  primaryLoad();
   calculateAge();
 });
