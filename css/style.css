@@ -15,7 +15,7 @@ html {
 }
 
 .progress-bar-animated {
-  animation: 1s linear infinite progress-bar-stripes;
+  animation: 3s linear infinite progress-bar-stripes;
 }
 
 @keyframes progress-bar-stripes {
